@@ -11,6 +11,22 @@ export class SessionsService {
     return this.sessionModel.findOne({ code }).exec();
   }
 
+  async endSession(code: string): Promise<Session | null> {
+    console.log(`Ending session with code: ${code}`);
+    console.trace();
+    const ended = await this.sessionModel.findOne({ code, ended: true }).exec();
+    if (ended) {
+      console.log(`Session with code: ${code} is already ended.`);
+      return ended;
+    }
+    const session = await this.getSession(code);
+    if (!session) throw new BadRequestException('Session not found');
+
+    (session as any).ended = true;
+    await session.save();
+    return session;
+  }
+
   async addPlayer(sessionCode: string, userId: string): Promise<Session> {
     const session = await this.getSession(sessionCode);
     if (!session) throw new BadRequestException('Session not found');

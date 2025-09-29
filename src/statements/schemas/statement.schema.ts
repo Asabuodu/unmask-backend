@@ -19,7 +19,7 @@
 // src/statements/statement.schema.ts
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
-import { User } from '../..users/users.schema';
+import { User } from '../../users/schemas/users.schema';
 
 @Schema()
 export class Statement extends Document {

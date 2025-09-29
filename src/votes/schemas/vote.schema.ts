@@ -1,27 +1,8 @@
-// import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-// import { Document, Types } from 'mongoose';
-// import { User } from '../../users/schemas/user.schema';
-// import { Statement } from '../../statements/schemas/statement.schema';
-
-// @Schema({ timestamps: true })
-// export class Vote extends Document {
-//   @Prop({ type: Types.ObjectId, ref: 'User', required: true })
-//   voter: User;
-
-//   @Prop({ type: Types.ObjectId, ref: 'Statement', required: true })
-//   statement: Statement;
-
-//   @Prop({ enum: ['truth', 'lie'], required: true })
-//   guess: 'truth' | 'lie';
-// }
-
-// export const VoteSchema = SchemaFactory.createForClass(Vote);
-
 // src/votes/vote.schema.ts
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
-import { User } from '../users/user.schema';
-import { Statement } from '../statements/statement.schema';
+import { User } from "../../users/schemas/users.schema";
+import { Statement } from '../../statements/schemas/statement.schema';
 
 @Schema()
 export class Vote extends Document {

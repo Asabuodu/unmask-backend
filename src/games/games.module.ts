@@ -13,7 +13,7 @@ import { VotesModule } from '../votes/votes.module';
 import { StatementsModule } from '../statements/statements.module';
 import { UsersModule } from '../users/users.module';
 import { SessionsModule } from '../sessions/sessions.module';
-import { MongooseModule } from '@nestjs/mongoose';
+//import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [VotesModule, StatementsModule, UsersModule, SessionsModule],

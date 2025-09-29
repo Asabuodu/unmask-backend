@@ -1,3 +1,5 @@
+
+
 // src/types.ts
 export interface Player {
   _id: string;
@@ -10,7 +12,31 @@ export interface Session {
   players: Player[];
   isActive: boolean;
   round: number;
+  ended?: boolean;
   save: () => Promise<void>;
+}
+
+export interface ChatMessage {
+  _id: string;
+  sender: string;
+  text: string;
+  timestamp: Date;
+}
+
+export interface Chat {
+  _id: string;
+  sessionCode: string;
+  messages: ChatMessage[];
+}
+
+export interface Round {
+  _id: string;
+  sessionCode: string;
+  roundNumber: number;
+  statements: Statement[];
+  guesses: Guess[];
+  results: GameResult[];
+  isCompleted: boolean;
 }
 
 export interface Statement {
