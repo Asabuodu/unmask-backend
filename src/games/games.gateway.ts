@@ -74,3 +74,7 @@ export class GamesGateway implements OnGatewayConnection, OnGatewayDisconnect {
     return { event: 'gameStarted', data };
   }
 }
+
+
+console.log('WebSocket server running at ws://localhost:3000/games');
+console.log('CORS policy: Allow all origins (update in production)');

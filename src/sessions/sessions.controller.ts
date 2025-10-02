@@ -8,6 +8,7 @@ export class SessionsController {
   @Post()
   async create(@Body() body: { code: string }) {
     await this.sessionsService.getSession(body.code);
+    console.log(body.code);
   }
 
   @Post('join')
@@ -24,4 +25,6 @@ export class SessionsController {
   async end(@Param('code') code: string) {
     return await this.sessionsService.endSession(code);
   }
+
+  
 }

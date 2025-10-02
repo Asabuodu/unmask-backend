@@ -22,7 +22,7 @@
 //   }
 // }
 
-import { Injectable, BadRequestException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Statement } from '../types';
@@ -49,4 +49,5 @@ export class StatementsService {
   async findByOwner(ownerId: string): Promise<Statement[]> {
     return this.statementModel.find({ owner: ownerId }).exec();
   }
+  
 }

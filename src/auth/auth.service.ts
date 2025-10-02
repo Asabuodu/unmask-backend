@@ -125,4 +125,5 @@ export class AuthService {
 
     return { message: 'Login successful', user: toSafeUser(user) };
   }
+  
 }

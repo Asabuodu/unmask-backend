@@ -16,3 +16,4 @@ export class SafeUserDto {
   createdAt?: Date;
   updatedAt?: Date;
 }
+
